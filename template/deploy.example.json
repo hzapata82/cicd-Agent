@@ -1,0 +1,16 @@
+{
+    "webhook_secret": "YOUR_SUPER_SECRET_HMAC_TOKEN_HERE",
+    "allowed_actions": ["deploy", "backup", "rollback", "probe"],
+    "backup_filename": "backup_latest.zip",
+    "flatten_extracted": true,
+    "restart_passenger": true,
+    "exclude_patterns": [
+        ".git",
+        "venv",
+        "__pycache__",
+        "node_modules",
+        ".env",
+        "tests",
+        "docs"
+    ]
+}
