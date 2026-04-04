@@ -39,3 +39,26 @@ Al notar el éxito del "Deployment Hook" automatizado para estabilizar House-Co,
 
 *Documento generado por Agente Antigravity en sesión con Henry Zapata.*
 *Fecha: 04 de Abril de 2026*
+
+---
+
+## 🛠️ 5. Inventario de Código a Extraer de House-Co
+Para completar la migración a `cicd/Agent`, se deben mover los siguientes componentes desde el repositorio `houseco`:
+
+1. **El Gateway PHP (Hook)**:
+   - Ruta: `/Users/henryzapata/Projects/houseco/saas-engine/scripts/deploy_hook.php`
+   - Función: Recibe el paquete comprimido desde el orquestador y lo descomprime atómicamente en el hosting compartido.
+
+2. **Utilidades de Diagnóstico**:
+   - Ruta: `/Users/henryzapata/Projects/houseco/saas-engine/scripts/test_path.php`
+   - Función: Script para validar rutas absolutas y permisos de escritura en Neubox.
+
+3. **Orquestador n8n (Export)**:
+   - Los flujos de despliegue en n8n que conectan el Webhook de GitHub con el envío FTP deben exportarse como JSON y guardarse en la carpeta `/workflows/` de este repositorio.
+
+4. **Scripts de Sincronización Local**:
+   - Cualquier script de Python local que realice el "Diff Analysis" entre el repo y el destino debe ser generalizado para usar variables de entorno en lugar de rutas fijas.
+
+---
+
+*Documento actualizado: 04 de Abril de 2026*
