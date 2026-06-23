@@ -1,6 +1,6 @@
 # 📊 Product Analysis: The "Manual FTP" Antipattern vs. GitOps
 
-## 🚩 The Problem: The Shared Hosting Prison
+## 🚩 The Problem: Shared Hosting Rigid Environment
 
 Shared hosting environments (Neubox, HostGator, Bluehost, etc.) are often the starting point for SMEs (Small and Medium Enterprises) due to their low cost. However, they impose severe technical restrictions:
 
@@ -17,11 +17,11 @@ Shared hosting environments (Neubox, HostGator, Bluehost, etc.) are often the st
 
 ---
 
-## 💡 The Solution: cicd/Agent (The Deployment Bridge)
+## 💡 The Solution: cicd/Agent (Deployment Bridge)
 
 Instead of fighting the hosting environment, **cicd/Agent** creates a high-speed, secure "Bridge" that brings GitOps workflows to legacy infrastructure.
 
-### The Hybrid Approach:
+### Hybrid Approach:
 1. **Local Power**: Your powerful developer machine (or a dedicated hybrid worker like a Mac Studio) handles the heavy lifting (Git operations, ZIP compression, Diff analysis).
 2. **Atomic Delivery**: Instead of sending 10,000 small files over FTP, we send **one single, compressed, and signed payload**.
 3. **The PHP Bridge**: A lightweight, standalone script on the server receives the payload, validates its authenticity via **HMAC-SHA256**, and extracts it atômically.
